@@ -297,6 +297,10 @@ html, body {
 .tab-content a:hover .text {
 	display: block;
 }
+.img_main {
+	width: 250px;
+	height: 250px;
+}
 
 .promo-content-1 {
 	background-image: url(img/promo-img1.jpg);
