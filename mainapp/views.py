@@ -1,24 +1,23 @@
 from django.shortcuts import render
+from .models import ProductCategory, Product
 
 
 def main(request):
+    products = Product.objects.all()[:4]
     content = {
-        'title': 'main'
+        'title': 'main',
+        'products': products
     }
     return render(request, 'mainapp/index.html', content)
 
 
-def products(request):
-    links_menu = [
-        {'href': 'products_all', 'name': 'все'},
-        {'href': 'products_home', 'name': 'дом'},
-        {'href': 'products_office', 'name': 'офис'},
-        {'href': 'products_modern', 'name': 'модерн'},
-        {'href': 'products_classic', 'name': 'классика'},
-    ]
+def products(request, pk=None):
+    same_products = Product.objects.all()
+    links_menu = ProductCategory.objects.all()
     content = {
         'title': 'products',
-        'links_menu': links_menu
+        'links_menu': links_menu,
+        'same_products': same_products
     }
     return render(request, 'mainapp/products.html', content)
 
