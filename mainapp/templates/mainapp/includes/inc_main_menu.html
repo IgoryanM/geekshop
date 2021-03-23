@@ -15,11 +15,14 @@
 
 {% endif %}
 
-<a href="#" class="search" style="background-repeat: no-repeat"></a>
+<a href="#" class="search"></a>
 
-<a href="{% url 'basket:view' %}" class="basket" style="background-repeat: no-repeat">
+<a href="{% url 'basket:view' %}" class="basket">
     <span>
-        {{ basket }}
+        {% if basket %}
+            {{ basket.0.total_cost|floatformat:0 }} руб.
+            ({{ basket.0.total_quantity }}) шт.
+        {% endif %}
     </span>
 </a>
 
