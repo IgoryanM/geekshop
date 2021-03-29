@@ -7,12 +7,21 @@
 </li>
 
 {% if user.is_authenticated %}
-    <li><a href="{% url 'auth:edit' %}"> {{ user.username|default:'Пользователь' }}</a></li>
-    <li><a href="{% url 'auth:logout' %}">выход</a></li>
-
+    <li>
+        <a href="{% url 'auth:edit' %}"> {{ user.username|default:'Пользователь' }}</a>
+    </li>
+    {% if user.is_superuser %}
+        <li>
+            <a href="{% url 'admin:user_read' %}">админка</a>
+        </li>
+    {% endif %}
+    <li>
+        <a href="{% url 'auth:logout' %}">выход</a>
+    </li>
 {% else %}
-    <li><a href="{% url 'auth:login' %}">вход</a></li>
-
+    <li>
+        <a href="{% url 'auth:login' %}">вход</a>
+    </li>
 {% endif %}
 
 <a href="#" class="search"></a>
