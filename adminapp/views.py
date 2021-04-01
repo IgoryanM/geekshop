@@ -135,39 +135,68 @@ def products(request, pk):
     products_list = Product.objects.filter(category=category_item).order_by('-is_active')
     content = {
         'objects': products_list,
-        'category': category_item,
+        'category': category_item
     }
-    return render(request, 'adminapp/categories.html', content)
+    return render(request, 'adminapp/products.html', content)
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def product_create(request, pk):
+    category_item = get_object_or_404(ProductCategory, pk=pk)
+    if request.method == 'POST':
+        product_form = ProductEditForm(request.POST, request.FILES)
+        if product_form.is_valid():
+            product_form.save()
+            return HttpResponseRedirect(reverse('admin:products', args=[pk]))
+    else:
+        product_form = ProductEditForm()
+    content = {
+        'form': product_form,
+        'category': category_item
+    }
+    return render(request, 'adminapp/product_update.html', content)
 
 
 @user_passes_test(lambda u: u.is_superuser)
 def product_read(request, pk):
-    pass
-
-
-@user_passes_test(lambda u: u.is_superuser)
-def product_create(request):
-    pass
+    product_item = get_object_or_404(Product, pk=pk)
+    content = {
+        'object': product_item
+    }
+    return render(request, 'adminapp/product_detail.html', content)
 
 
 @user_passes_test(lambda u: u.is_superuser)
 def product_update(request, pk):
-    edit_product = get_object_or_404(Product, pk=pk)
+    product_item = get_object_or_404(Product, pk=pk)
     if request.method == 'POST':
-        update_form = ProductEditForm(request.POST, request.FILES, instance=edit_product)
-        if update_form.is_valid():
-            update_form.save()
-            return HttpResponseRedirect(reverse('adminapp:products', args=[edit_product.category_id]))
+        product_form = ProductEditForm(request.POST, request.FILES, instance=product_item)
+        if product_form.is_valid():
+            product_form.save()
+            return HttpResponseRedirect(reverse('adminapp:products', args=[product_item.category.pk]))
     else:
-        update_form = ProductEditForm(instance=edit_product)
+        product_form = ProductEditForm(instance=product_item)
 
     content = {
-        'form': update_form,
-        'category': edit_product.category
+        'form': product_form,
+        'category': product_item.category
     }
 
-    return render(request, 'adminapp/product_update', content)
+    return render(request, 'adminapp/product_update.html', content)
+
 
 @user_passes_test(lambda u: u.is_superuser)
 def product_delete(request, pk):
-    pass
+    product_item = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        if product_item.is_active:
+            product_item.is_active = False
+        else:
+            product_item.is_active = True
+        product_item.save()
+        return HttpResponseRedirect(reverse('adminapp:products', args=[product_item.category.pk]))
+
+    content = {
+        'product_to_delete': product_item
+    }
+    return render(request, 'adminapp/product_delete.html', content)
