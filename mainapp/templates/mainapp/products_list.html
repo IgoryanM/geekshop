@@ -3,7 +3,7 @@
 
 {% block content %}
 
-     <div class="hero-white">
+    <div class="hero-white">
         <div class="header clearfix">
             <a href="index.html" class="logo"></a>
             <ul class="menu">
@@ -21,6 +21,17 @@
                 <h2>
                     Категория: "{{ category_item.name|title }}"
                 </h2>
+                <div class="paginator">
+                    {% if products.has_previous %}
+                        <a href="{% url 'products:page' category_item.pk products.previous_page_number %}"><-</a>
+                    {% endif %}
+                    <span class="current">
+                        страница {{ products.number }} из {{ products.paginator.num_pages }}
+                    </span>
+                    {% if products.has_next %}
+                        <a href="{% url 'products:page' category_item.pk products.next_page_number %}">-></a>
+                    {% endif %}
+                </div>
             </div>
             <div class="category-products clearfix">
 
