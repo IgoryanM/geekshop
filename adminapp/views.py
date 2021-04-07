@@ -187,9 +187,13 @@ class ProductCategoryDelete(DeleteView):
     success_url = reverse_lazy('admin:category_read')
 
     def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        self.object.is_active = False
-        self.object.save()
+        category_object = self.get_object()
+        if category_object.is_active:
+            category_object.is_active = False
+        else:
+            category_object.is_active = True
+
+        category_object.save()
         return HttpResponseRedirect(self.success_url)
 
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
@@ -197,15 +201,24 @@ class ProductCategoryDelete(DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
 
-@user_passes_test(lambda u: u.is_superuser)
-def products(request, pk):
-    category_item = get_object_or_404(ProductCategory, pk=pk)
-    products_list = Product.objects.filter(category=category_item).order_by('-is_active')
-    content = {
-        'objects': products_list,
-        'category': category_item
-    }
-    return render(request, 'adminapp/products.html', content)
+# @user_passes_test(lambda u: u.is_superuser)
+# def products(request, pk):
+#     category_item = get_object_or_404(ProductCategory, pk=pk)
+#     products_list = Product.objects.filter(category=category_item).order_by('-is_active')
+#     content = {
+#         'objects': products_list,
+#         'category': category_item
+#     }
+#     return render(request, 'adminapp/products.html', content)
+
+class ProductList(ListView):
+    model = Product
+    template_name = 'adminapp/products.html'
+    paginate_by = 2
+
+    @method_decorator(user_passes_test(lambda u: u.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
 
 @user_passes_test(lambda u: u.is_superuser)
