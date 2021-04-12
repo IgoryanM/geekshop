@@ -62,9 +62,8 @@ def edit(request):
     if request.method == 'POST':
         edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)
         profile_form = ShopUserProfileEditForm(request.POST, instance=request.user.shopuserprofile)
-        if edit_form.is_valid():
+        if edit_form.is_valid() and profile_form.is_valid():
             edit_form.save()
-            # profile_form.save()
             return HttpResponseRedirect(reverse('auth:edit'))
     else:
         edit_form = ShopUserEditForm(instance=request.user)
