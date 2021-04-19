@@ -2,9 +2,20 @@ from django.conf import settings
 from django.db import models
 
 from mainapp.models import Product
+from orderapp.models import OrderItem
+
+
+# class BasketQuerySet(models.QuerySet):
+#     def delete(self):
+#         for item in self:
+#             item.product.quantity += item.quantity
+#             item.product.save()
+#         super().delete()
 
 
 class Basket(models.Model):
+    # objects = BasketQuerySet.as_manager()
+
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='basket')
     add_datetime = models.DateTimeField(auto_now_add=True, verbose_name='время')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -25,3 +36,18 @@ class Basket(models.Model):
         _items = Basket.objects.filter(user=self.user)
         _total_cost = sum(list(map(lambda x: x.product_cost, _items)))
         return _total_cost
+
+    def delete(self):
+        self.product.quantity += self.quantity
+        self.product.save()
+        super().delete()
+
+    @staticmethod
+    def get_items(user):
+        return Basket.objects.filter(user=user).order_by('product__category')
+
+    @staticmethod
+    def get_item(pk):
+        return Basket.objects.get(pk=pk)
+
+

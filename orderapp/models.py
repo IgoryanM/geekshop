@@ -33,11 +33,11 @@ class Order(models.Model):
     def __str__(self):
         return f'Текущий заказ: {self.pk}'
 
-    def get_total_quantity(self):
+    def total_quantity(self):
         items = self.orderitems.select_related()
         return sum(list(map(lambda x: x.quantity, items)))
 
-    def get_total_price(self):
+    def total_cost(self):
         items = self.orderitems.select_related()
         return sum(list(map(lambda x: x.get_product_cost(), items)))
 
@@ -56,3 +56,7 @@ class OrderItem(models.Model):
 
     def get_product_cost(self):
         return self.quantity * self.product.price
+
+    @staticmethod
+    def get_item(pk):
+        return Order.objects.get(pk=pk)
