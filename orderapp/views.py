@@ -61,7 +61,7 @@ class OrderCreateView(CreateView):
                 orderitems.instance = self.object
                 orderitems.save()
 
-        if self.object.get_total_price() == 0:
+        if self.object.total_cost() == 0:
             self.object.delete()
 
         return super().form_valid(form)
@@ -83,6 +83,7 @@ class OrderUpdateView(UpdateView):
 
         if self.request.POST:
             data['orderitems'] = OrderFormSet(self.request.POST, instance=self.object)
+
         else:
             formset = OrderFormSet(instance=self.object)
             for form in formset.forms:
@@ -114,7 +115,6 @@ class OrderUpdateView(UpdateView):
 
         with transaction.atomic():
             self.object = form.save()
-
             if orderitems.is_valid():
                 orderitems.instance = self.object
                 orderitems.save()
