@@ -147,18 +147,18 @@ LOGIN_URL = '/auth/login/'
 
 BASE_URL = 'http://127.0.0.1:8000'
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 25
-EMAIL_HOST_USER = 'django@gb.local'
-EMAIL_HOST_PASSWORD = 'geekshop'
-EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'djangogeekshop@yandex.ru'
+EMAIL_HOST_PASSWORD = 'Rfv12345+4'
+EMAIL_USE_SSL = True
 
 # python
 # EMAIL_HOST_USER = None
 # EMAIL_HOST_PASSWORD = None
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = 'tmp/email-messages/'
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = 'tmp/email-messages/'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
