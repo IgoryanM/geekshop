@@ -1,0 +1,210 @@
+﻿Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-72-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Thu Apr 22 05:49:47 2021 from 5.18.103.79
+root@194-58-104-230:~# history                                                1  ssh keygen
+    2  ssh-keygen
+    3  cat
+    4  cat /root/.ssh/id_rsa.pub
+    5  apt update
+    6  apt install nginx
+    7  apt install postgresql postgresql-contrib
+    8  apt install git-core
+    9  apt install python3-venv
+   10  cd
+   11  apt install mc
+   12  mcedit /etc/postgresql/12/main/pg_hba.conf
+   13  cat /root/.ssh/id_rsa.pub
+   14  nano /etc/postgresql/12/main/pg_hba.conf
+   15  systemctl restart postgresql
+   16  cat user
+   17  userlist
+   18  user
+   19  cat /etc/paswd
+   20  cat /etc/passwd
+   21  useradd -g www-data -m django
+   22  cat /etc/passwd
+   23  cd /home/django/
+   24  postgres
+   25  postgres -v
+   26  nano /etc/postgresql/12/main/pg_hba.conf
+   27  git clone git@github.com:IgoryanM/geekshop.git
+   28  cd geekshop/
+   29  python -m venv env
+   30  python3 -m venv env
+   31  cat
+   32  cat/
+   33  cat geekshop
+   34  cat geekshop/
+   35  ls
+   36  nano /etc/postgresql/10/main/pg_hba.conf
+   37  pacman -Q
+   38  apk info
+   39  apt list
+   40  apt list -installed
+   41  apt list --installed
+   42  ssh-copy-id root@194.58.104.230
+   43  exit
+   44  cd geekshop
+   45  git clone git@github.com:IgoryanM/geekshop.git
+   46  .
+   47  /
+   48  cd
+   49  rmdir geekshop
+   50  rmdir -R geekshop
+   51  rm -R geekshop
+   52  git clone git@github.com:IgoryanM/geekshop.git
+   53  cd geekshop/
+   54  python3 -m venv env
+   55  source env/bin/activate
+   56  pip3 install -r requirements.txt
+   57  pip install -r requirements.txt
+   58  cd
+   59  rm -R geekshop
+   60  git clone git@github.com:IgoryanM/geekshop.git
+   61  source env/bin/activate
+   62  python3 -m venv env
+   63  source env/bin/activate
+   64  pip install -r requirements.txt
+   65  cd geekshop
+   66  source env/bin/activate
+   67  python3 -m venv env
+   68  source env/bin/activate
+   69  pip install -r requirements.txt
+   70  pip install gunicorn
+   71  pip3 install gunicorn
+   72  python manage.py migrate
+   73  psql -U postgres
+   74  python3 manage.py migrate
+   75  python3 manage.py fill_db
+   76  python3 manage.py fill_db.py
+   77  cd mainapp/
+   78  management/commands/
+   79  cd management/
+   80  cd commands/
+   81  cd ~
+   82  cd geekshop/
+   83  python manage.py fill
+   84  python3 manage.py runserver
+   85  chown -R django /home/django/
+   86  chmod -R 755 /home/django/geekshop/
+   87  sudo nano /etc/systemd/system/gunicorn.service
+   88  la
+   89  ls
+   90  cd env/
+   91  ls
+   92  cd bin
+   93  ls
+   94  cd gu
+   95  cd gunicorn
+   96  cat gunicorn 
+   97  cd
+   98  geekshop/
+   99  cd geekshop/
+  100  ls
+  101  cd
+  102  cd geekshop/
+  103  ls
+  104  sudo systemctl enable gunicorn
+  105  sudo systemctl start gunicorn
+  106  sudo systemctl status gunicorn
+  107  sudo systemctl enable gunicorn
+  108  sudo systemctl start gunicorn
+  109  sudo systemctl status gunicorn
+  110  sudo nano /etc/nginx/sites-available/geekshop
+  111  sudo ln -s /etc/nginx/sites-available/geekshop /etc/nginx/sites-enabled
+  112  sudo nginx -t
+  113  sudo systemctl restart nginx
+  114  sudo systemctl status gunicorn
+  115  sudo nano /etc/systemd/system/gunicorn.service
+  116  sudo systemctl status gunicorn
+  117  sudo systemctl enable gunicorn
+  118  sudo systemctl start gunicorn
+  119  sudo systemctl status gunicorn
+  120  pip install wheel
+  121  pip install gunicorn
+  122  ls -la
+  123  chown -R django /home/django/geekshop
+  124  ls -la
+  125  chown -R django /home/django/
+  126  ls -la
+  127  sudo nano /etc/systemd/system/gunicorn.service
+  128  sudo systemctl start gunicorn
+  129  sudo nano /etc/systemd/system/gunicorn.service
+  130  systemctl daemon-reload
+  131  sudo systemctl start gunicorn
+  132  sudo systemctl status gunicorn
+  133  sudo nano /etc/systemd/system/gunicorn.service
+  134  sudo systemctl enable gunicorn
+  135  sudo systemctl start gunicorn
+  136  sudo systemctl status gunicorn
+  137  sudo nano /etc/systemd/system/gunicorn.service
+  138  ls -la
+  139  chown -R django /home/django/
+  140  ls -la
+  141  chown -R django /home/django/geekshop
+  142  chown -R django /home/django/geekshop/
+  143  ls -la
+  144  sudo chown -R django /home/django/geekshop/
+  145  ls -la
+  146  sudo chown -R django /home/django/
+  147  ls -la
+  148  sudo chown -R django /home/django
+  149  ls -la
+  150  useradd -g www-data -m django
+  151  ~cd ~
+  152  ls
+  153  cd
+  154  ls
+  155  ls -la
+  156  cd
+  157  /home
+  158  /home/
+  159  exit
+  160  ssh-copy-id root@194.58.104.230
+  161  nano /etc/postgresql/12/main/pg_hba.conf 
+  162  cd/home/django
+  163  cd/home/django/
+  164  useradd -g www-data -m django
+  165  cd/home/
+  166  cd /home/django/
+  167  git clone git@github.com:IgoryanM/geekshop.git
+  168  cd geekshop/
+  169  source env/bin/activate
+  170  python3 -m venv env
+  171  ls
+  172  source env/bin/activate
+  173  pip install -r requirements.txt
+  174  pip3 install -r requirements.txt
+  175  pip install -r requirements.txt
+  176  ls
+  177  ls -l
+  178  ls
+  179  cd var
+  180  cd /home
+  181  cd
+  182  ls -la
+  183  cd /home
+  184  ls
+  185  cd django
+  186  ls
+  187  cdgeekshop
+  188  cd geekshop
+  189  ls -la
+  190  cd ~
+  191  cd geekshop
+  192  cd /etc/nginx/sites-available
+  193  ls
+  194  rm default
+  195  ls
+  196  ls -la
+  197  sudo nginx -t
+  198  cd /etc/nginx/sites-enabled
+  199  ls
+  200  rm default
+  201  ls
+  202  sudo nginx -t
+  203  history
+root@194-58-104-230:~#
