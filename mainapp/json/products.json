@@ -1,0 +1,136 @@
+[
+  {
+    "category": "стулья",
+    "name": "стул_1",
+    "image": "product_images/pr_1.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "100.50",
+    "quantity": "1"
+  },
+  {
+    "category": "стулья",
+    "name": "стул_2",
+    "image": "product_images/pr_2.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "200.50",
+    "quantity": "2"
+  },
+  {
+    "category": "стулья",
+    "name": "стул_3",
+    "image": "product_images/pr_3.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "300.50",
+    "quantity": "3"
+  },
+  {
+    "category": "столы",
+    "name": "стол_1",
+    "image": "product_images/pr_4.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "100.50",
+    "quantity": "1"
+  },
+  {
+    "category": "столы",
+    "name": "стол_2",
+    "image": "product_images/pr_5.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "200.50",
+    "quantity": "2"
+  },
+  {
+    "category": "столы",
+    "name": "стол_3",
+    "image": "product_images/pr_6.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "300.50",
+    "quantity": "3"
+  },
+  {
+    "category": "комоды",
+    "name": "комод_1",
+    "image": "product_images/pr_7.jpg",
+    "description": "полное описание",
+    "price": "100.50",
+    "quantity": "1"
+  },
+  {
+    "category": "комоды",
+    "name": "комод_2",
+    "image": "product_images/pr_8.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "200.50",
+    "quantity": "2"
+  },
+  {
+    "category": "комоды",
+    "name": "комод_3",
+    "image": "product_images/pr_9.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "300.50",
+    "quantity": "3"
+  },
+  {
+    "category": "кровати",
+    "name": "кровать_1",
+    "image": "product_images/pr_10.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "100.50",
+    "quantity": "1"
+  },
+  {
+    "category": "кровати",
+    "name": "кровать_2",
+    "image": "product_images/pr_11.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "200.50",
+    "quantity": "2"
+  },
+  {
+    "category": "кровати",
+    "name": "кровать_3",
+    "image": "product_images/pr_12.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "300.50",
+    "quantity": "3"
+  },
+  {
+    "category": "тумбочки",
+    "name": "тумбочка_1",
+    "image": "product_images/pr_13.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "100.50",
+    "quantity": "1"
+  },
+  {
+    "category": "тумбочки",
+    "name": "тумбочка_2",
+    "image": "product_images/pr_14.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "200.50",
+    "quantity": "2"
+  },
+  {
+    "category": "тумбочки",
+    "name": "тумбочка_3",
+    "image": "product_images/pr_15.jpg",
+    "short_desc": "короткое описание",
+    "description": "полное описание",
+    "price": "300.50",
+    "quantity": "3"
+  }
+]
