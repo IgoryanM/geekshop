@@ -1,0 +1,19 @@
+Unit gunicornsudo.service could not be found.
+Unit systemctl.service could not be found.
+Unit start.service could not be found.
+[0;1;31m●[0m gunicorn.service - gunicorn daemon
+     Loaded: loaded (/etc/systemd/system/gunicorn.service; enabled; vendor preset: enabled)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Sun 2021-04-25 08:31:05 MSK; 1s ago
+    Process: 24300 ExecStart=/home/django/geekshop/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/django/geekshop/geekshop.sock geekshop.wsgi [0;1;31m(code=exited, status=1/FAILURE)[0m
+   Main PID: 24300 (code=exited, status=1/FAILURE)
+
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:     self.stop()
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:   File "/home/django/geekshop/env/lib/python3.8/site-packages/gunicorn/arbiter.py", line 393, in stop
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:     time.sleep(0.1)
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:   File "/home/django/geekshop/env/lib/python3.8/site-packages/gunicorn/arbiter.py", line 242, in handle_chld
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:     self.reap_workers()
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:   File "/home/django/geekshop/env/lib/python3.8/site-packages/gunicorn/arbiter.py", line 525, in reap_workers
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru gunicorn[24300]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru systemd[1]: [0;1;39m[0;1;31m[0;1;39mgunicorn.service: Main process exited, code=exited, status=1/FAILURE[0m
+Apr 25 08:31:05 194-58-104-230.cloudvps.regruhosting.ru systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mgunicorn.service: Failed with result 'exit-code'.[0m
