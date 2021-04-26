@@ -1,10 +1,15 @@
 from django.shortcuts import render
-
+from
 
 def main(request):
+    title = 'главная'
+    products = Product.objects.filter(is_active=True, category__is_active=True).select_related('category')[:3]
+
     content = {
-        'title': 'main'
+        'title': title,
+        'products': products,
     }
+
     return render(request, 'mainapp/index.html', content)
 
 
