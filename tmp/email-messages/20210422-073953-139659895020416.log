@@ -1,0 +1,15 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IGlnb3JtaW5ha292MjgzQGdtYWlsLmNvbQ==?=
+From: django@gb.local
+To: igorminakov283@gmail.com
+Date: Thu, 22 Apr 2021 07:39:53 -0000
+Message-ID: 
+ <161907719318.8761.7852978509184506950@194-58-104-230.cloudvps.regruhosting.ru>
+
+Для подтверждения учетной записи Userr на портале http://127.0.0.1:8000 перейдите по ссылке: 
+http://127.0.0.1:8000/auth/verify/igorminakov283@gmail.com/1f9807310deb42fd441cfc20e4d78b58ad11a2c4/
+-------------------------------------------------------------------------------
