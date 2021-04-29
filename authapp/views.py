@@ -57,7 +57,7 @@ def register(request):
 
     return render(request, 'authapp/register.html', content)
 
-
+@login_required
 def edit(request):
     if request.method == 'POST':
         edit_form = ShopUserEditForm(request.POST, request.FILES, instance=request.user)

@@ -19,9 +19,13 @@ class OrderListView(ListView):
     def get_queryset(self):
         return Order.objects.filter(user=self.request.user)
 
-    @method_decorator(login_required()) 
+   
+
+
+ @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
         return super(ListView, self).dispatch(*args, **kwargs)
+
 
 
 class OrderCreateView(CreateView):
@@ -29,10 +33,6 @@ class OrderCreateView(CreateView):
     success_url = reverse_lazy('order:order_list')
     # form_class = OrderForm
     fields = []
-
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
@@ -79,20 +79,12 @@ class OrderCreateView(CreateView):
 class OrderDetailView(DetailView):
     model = Order
 
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
-
 
 class OrderUpdateView(UpdateView):
     model = Order
     success_url = reverse_lazy('order:order_list')
     # form_class = OrderForm
     fields = []
-
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
@@ -146,9 +138,6 @@ class OrderDeleteView(DeleteView):
     model = Order
     success_url = reverse_lazy('order:order_list')
 
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
 
 def order_forming_complete(request, pk):
     order = get_object_or_404(Order, pk=pk)
