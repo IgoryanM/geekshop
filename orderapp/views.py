@@ -34,7 +34,7 @@ class OrderCreateView(CreateView):
 
     @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
+        return super(CreateView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
@@ -83,7 +83,7 @@ class OrderDetailView(DetailView):
 
     @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
+        return super(DetailView, self).dispatch(*args, **kwargs)
 
 
 class OrderUpdateView(UpdateView):
@@ -94,7 +94,7 @@ class OrderUpdateView(UpdateView):
 
     @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
+        return super(UpdateView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
@@ -150,7 +150,7 @@ class OrderDeleteView(DeleteView):
 
     @method_decorator(login_required())
     def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
+        return super(DeleteView, self).dispatch(*args, **kwargs)
 
 def order_forming_complete(request, pk):
     order = get_object_or_404(Order, pk=pk)
