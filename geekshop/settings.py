@@ -124,7 +124,7 @@ CACHES = {
     }
 }
 
-LOW_CACHE = False
+LOW_CACHE = True
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
