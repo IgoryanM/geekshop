@@ -1,1 +1,6 @@
-http://194.58.104.230/basket/
+http://194.58.104.230/
+http://194.58.104.230/products/
+http://194.58.104.230/products/11/
+http://194.58.104.230/products/12/
+http://194.58.104.230/products/product/43/
+http://194.58.104.230/products/product/44/
