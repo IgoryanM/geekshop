@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views.decorators.cache import cache_page
 
 from basketapp.models import Basket
-from .models import ProductCategory, Product
+from mainapp.models import ProductCategory, Product
 
 from django.conf import settings
 from django.core.cache import cache
@@ -18,6 +18,7 @@ def get_links_menu():
         if links_menu is None:
             links_menu = ProductCategory.objects.filter(is_active=True)
             cache.set(key, links_menu)
+        return links_menu
     else:
         return ProductCategory.objects.filter(is_active=True)
 

@@ -22,9 +22,9 @@ class Basket(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0, verbose_name='количество')
 
-    # @cached_property
-    # def get_items_cached(self):
-    #     return self.user.basket.select_related()
+    @cached_property
+    def get_items_cached(self):
+        return self.user.basket.select_related()
 
     @property
     def product_cost(self):
@@ -32,15 +32,15 @@ class Basket(models.Model):
 
     @property
     def total_quantity(self):
-        _items = Basket.objects.filter(user=self.user)
-       # _items = self.get_items_cached
+        #_items = Basket.objects.filter(user=self.user)
+        _items = self.get_items_cached
         _total_quantity = sum(list(map(lambda x: x.quantity, _items)))
         return _total_quantity
 
     @property
     def total_cost(self):
-        _items = Basket.objects.filter(user=self.user)
-        #_items = self.get_items_cached
+        #_items = Basket.objects.filter(user=self.user)
+        _items = self.get_items_cached
         _total_cost = sum(list(map(lambda x: x.product_cost, _items)))
         return _total_cost
 
