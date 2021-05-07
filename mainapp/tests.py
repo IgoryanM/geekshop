@@ -6,8 +6,9 @@ from django.core.management import call_command
 
 class TestMainappSmoke(TestCase):
     def setUp(self):
-        call_command('flush', '--noinput')
-        call_command('loaddata', 'test_db.json')
+        self.category = ProductCategory.objects.create(name='category_test')
+        Product.objects.create(category=self.category, name='test_1')
+        Product.objects.create(category=self.category, name='test_2')
         self.client = Client()
 
     def test_mainapp_urls(self):
@@ -20,7 +21,7 @@ class TestMainappSmoke(TestCase):
         response = self.client.get('/products/')
         self.assertEqual(response.status_code, 200)
 
-        response = self.client.get('/products/11/')
+        response = self.client.get(f'/products/{self.category.pk}/')
         self.assertEqual(response.status_code, 200)
 
         for category in ProductCategory.objects.all():

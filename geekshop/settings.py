@@ -189,6 +189,8 @@ AUTH_USER_MODEL = 'authapp.ShopUser'
 
 LOGIN_URL = '/auth/login/'
 
+DOMAIN_NAME = 'http://127.0.0.1:8000'
+
 BASE_URL = 'http://127.0.0.1:8000'
 
 EMAIL_HOST = 'smtp.yandex.ru'
