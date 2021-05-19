@@ -1,4 +1,4 @@
-from django.test import TestCase
+0;14;7M3;14;7mfrom django.test import TestCase
 from django.test.client import Client
 from mainapp.models import Product, ProductCategory
 from django.core.management import call_command
@@ -31,3 +31,7 @@ class TestMainappSmoke(TestCase):
         for product in Product.objects.all():
             response = self.client.get(f'/products/product/{product.pk}/')
             self.assertEqual(response.status_code, 200)
+
+    def tearDown(self):
+        call_command('sqlsequencereset', 'mainapp', 'authapp', 'orderapp', 'basketapp')
+
