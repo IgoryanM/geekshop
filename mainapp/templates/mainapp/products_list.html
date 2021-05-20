@@ -38,7 +38,7 @@
                 {% for product in products %}
                     <div class="block">
                         <a href="{% url 'products:product' product.pk %}">
-                            <img src="/media/{{ product.image }}" alt="product">
+                            <img class="product" src="/media/{{ product.image }}" alt="product">
                             <div class="text">
                                 <img src="{% static 'img/icon-hover.png' %}" alt="hover">
                                 <h4>{{ product.name }}</h4>

@@ -2,7 +2,6 @@ import random
 
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
-from django.views.decorators.cache import cache_page
 
 from basketapp.models import Basket
 from mainapp.models import ProductCategory, Product
@@ -61,11 +60,10 @@ def main(request):
     return render(request, 'mainapp/index.html', content)
 
 
-### @cache_page(3600)#########################
 def products(request, pk=None, page=1):
     # links_menu = ProductCategory.objects.all()
     links_menu = get_links_menu()
-    page = request.GET.get('p', 1)
+    #page = request.GET.get('p', 1)
 
     if pk is not None:
         if pk == 0:

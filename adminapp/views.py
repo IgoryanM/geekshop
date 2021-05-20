@@ -229,6 +229,10 @@ class ProductList(ListView):
     template_name = 'adminapp/products.html'
     paginate_by = 2
 
+    def get_queryset(self):
+        qs = super(ProductList, self).get_queryset()
+        return qs.filter(category_id=self.kwargs['pk'])
+
     @method_decorator(user_passes_test(lambda u: u.is_superuser))
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
