@@ -30,7 +30,7 @@
             {% for product in products %}
                 <div class="block">
                     <a href="{% url 'products:product' product.pk %}">
-                        <img class=img_main src="/media/{{ product.image }}" alt="{{ product.name }}">
+                        <img class="img_main product" src="/media/{{ product.image }}" alt="{{ product.name }}">
                         <div class="text">
                             <img src="{% static 'img/icon-hover.png' %}" alt="{{ product.name }}">
                             <h3>{{ product.category.name }}</h3>

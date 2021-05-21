@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'y+3j+2etdp^k062wvm-8*7d5!_yq_-cd8=8+nnq&8^*e^pf3a='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -189,9 +189,9 @@ AUTH_USER_MODEL = 'authapp.ShopUser'
 
 LOGIN_URL = '/auth/login/'
 
-DOMAIN_NAME = 'http://127.0.0.1:8000'
+DOMAIN_NAME = 'http://194.58.104.230'
 
-BASE_URL = 'http://127.0.0.1:8000'
+BASE_URL = 'http://194.58.104.230'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = '465'
